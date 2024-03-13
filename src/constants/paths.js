@@ -2,6 +2,9 @@ export const paths = {
 
     dashboard: "/dashboard",
 
+    singer: "singer",
+    singerCreate: "singer/new",
+
     admin: "/admin",
     adminCreate: "/admin/new",
     adminLogout: "/auth/login",

@@ -4,7 +4,7 @@ import { AppBar, DrawerHeader, keys, Drawer } from '../../constants/config';
 import { useEffect, useState } from 'react';
 import { Box, Collapse, Divider, IconButton, List, Toolbar, Typography } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
-import MenuIcon from '@mui/icons-material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -29,9 +29,9 @@ export const DefaultLayout = () => {
         setExpandedIndex((prevIndex) => (prevIndex === index ? -1 : index));
     };
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
+    // const handleDrawerOpen = () => {
+    //     setOpen(true);
+    // };
 
     const handleDrawerClose = () => {
         setOpen(false);
@@ -67,7 +67,7 @@ export const DefaultLayout = () => {
                     <CssBaseline />
                     <AppBar position="fixed" open={open}>
                         <Toolbar>
-                            <IconButton
+                            {/* <IconButton
                                 color="inherit"
                                 aria-label="open drawer"
                                 onClick={handleDrawerOpen}
@@ -75,7 +75,7 @@ export const DefaultLayout = () => {
                                 sx={{ mr: 2, ...(open && { display: 'none' }) }}
                             >
                                 <MenuIcon />
-                            </IconButton>
+                            </IconButton> */}
                             <Typography variant="h6" noWrap component="div">
                                 Heineken
                             </Typography>

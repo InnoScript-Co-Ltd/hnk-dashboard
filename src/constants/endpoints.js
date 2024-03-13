@@ -3,6 +3,7 @@ export const baseURL = "http://localhost:8000/api";
 export const endpoints = {
     login: "auth/login",
     admin: "admin",
+    singer: "singer",
     user: "user",
     promotion: "promotion",
     memberOrder: "member-order",
