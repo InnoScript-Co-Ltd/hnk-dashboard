@@ -77,7 +77,7 @@ export const DefaultLayout = () => {
                                 <MenuIcon />
                             </IconButton>
                             <Typography variant="h6" noWrap component="div">
-                                WinyKhin
+                                Heineken
                             </Typography>
                         </Toolbar>
                     </AppBar>

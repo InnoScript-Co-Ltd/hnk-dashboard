@@ -57,7 +57,7 @@ export const Login = () => {
                         alignItems={'center'}
                     >
                         <Typography>
-                            Winy Khin
+                            Heineken
                         </Typography>
                     </Box>
 
