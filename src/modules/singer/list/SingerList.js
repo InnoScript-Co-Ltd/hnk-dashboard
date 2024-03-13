@@ -1,71 +1,56 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Breadcrumb } from '../../../shares/Breadcrumbs'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-// import TablePagination from '@mui/material/TablePagination';
+import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { emptyRows } from '../../../constants/config';
+import { TablePaginationActions, emptyRows } from '../../../constants/config';
 import { Box, TableHead, TableSortLabel } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { adminService } from '../adminService';
-import { adminPayload } from '../adminPayload';
-import { setPaginate } from '../adminSlice';
-// import { Status } from '../../../shares/Status';
-// import { TableCustomizeSetting } from '../../../shares/TableCustomizeSetting';
+import { setPaginate } from '../singerSlice';
 import { TableSearch } from '../../../shares/TableSearch';
-import { useNavigate } from 'react-router-dom';
-// import { endpoints } from '../../../constants/endpoints';
-// import { getRequest } from '../../../helpers/api';
-// import { FilterByDate } from '../../../shares/FilterByDate';
-// import { setDateFilter } from '../../../shares/shareSlice';
-// import { FilterByStatus } from '../../../shares/FilterByStatus';
+import { singerService } from '../singerService';
+import { singerPayload } from '../singerPayload';
 
-export const AdminList = () => {
+export const SingerList = () => {
 
-  const { admins, paginateParams } = useSelector(state => state.admin);
+  const { singers, paginateParams } = useSelector(state => state.singer);
   const dispatch = useDispatch();
 
   const [total, setTotal] = useState(0);
   const [columnIds, setColumnIds] = useState('');
   const [sort, setSort] = useState(true);
-  const naviate = useNavigate();
+  const singerColumns = useRef(singerPayload.columns);
 
-  // const adminStatus = useRef(['ALL']);
-
-  const [columns, setColumns] = useState(adminPayload.columns);
-
-  const navigateTo = (id) => {
-    naviate(`/admin/${id}`);
-  }
   /**
   * Event - Paginate Page Change
   * @param {*} event 
   */
-  // const onPageChange = (event, newPage) => {
-  //   dispatch(
-  //     setPaginate({
-  //       ...paginateParams,
-  //       page: newPage,
-  //     })
-  //   );
-  // };
+  const onPageChange = (event, newPage) => {
+    dispatch(
+      setPaginate({
+        ...paginateParams,
+        page: newPage,
+      })
+    );
+  };
 
   /**
   * Event - Paginate Row Per Page Change
   * @param {*} event 
   */
-  // const onRowPerPageChange = (event) => {
-  //   dispatch(
-  //     setPaginate({
-  //       ...paginateParams,
-  //       page: 1,
-  //       per_page: parseInt(event.target.value, 10)
-  //     })
-  //   );
-  // };
+  const onRowPerPageChange = (event) => {
+    dispatch(
+      setPaginate({
+        ...paginateParams,
+        page: 1,
+        per_page: parseInt(event.target.value, 10)
+      })
+    );
+  };
 
   /**
  * Event - Sorting
@@ -101,68 +86,12 @@ export const AdminList = () => {
     );
   };
 
-
-  /**
- * On Change Filter
- * @param {*} e
- */
-  // const onFilter = (e) => {
-  //   console.log(e);
-  //   let updatePaginateParams = { ...paginateParams };
-
-  //   if (e?.target?.value === "ALL") {
-  //     updatePaginateParams.filter = "";
-  //     updatePaginateParams.value = "";
-  //   } else {
-  //     updatePaginateParams.filter = "status";
-  //     updatePaginateParams.value = e?.target?.value;
-  //   }
-
-  //   dispatch(setPaginate(updatePaginateParams));
-  //   // dispatch(setStatusFilter(e));
-  // };
-
-  // const onFilterByDate = (e) => {
-  //   let updatePaginateParams = { ...paginateParams };
-
-  //   updatePaginateParams.start_date = e.startDate
-  //     ? e.startDate.toISOString().split('T')[0]
-  //     : "";
-  //   updatePaginateParams.end_date = e.endDate
-  //     ? e.endDate.toISOString().split('T')[0]
-  //     : "";
-
-  //   console.log(updatePaginateParams);
-
-  //   dispatch(setDateFilter(e));
-  //   dispatch(setPaginate(updatePaginateParams));
-  // };
-
   const loadingData = useCallback(async () => {
-    const result = await adminService.index(dispatch, paginateParams);
+    const result = await singerService.index(dispatch, paginateParams);
     if (result.status === 200) {
       setTotal(result?.data?.total ? result.data.total : result.data.length);
     }
   }, [dispatch, paginateParams])
-
-  /**
- * loading Admin Status
-*/
-  // const loadingStatus = useCallback(async () => {
-  //   const adminStatusResponse = await getRequest(
-  //     `${endpoints.status}?type=admin`
-  //   );
-
-  //   if (adminStatusResponse.status === 200) {
-  //     adminStatus.current = adminStatus.current.concat(
-  //       adminStatusResponse.data.admin
-  //     );
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   loadingStatus()
-  // }, [loadingStatus])
 
   useEffect(() => {
     loadingData();
@@ -193,9 +122,6 @@ export const AdminList = () => {
                       justifyContent={'space-between'}
                       gap={2}
                     >
-
-                      {/* <TableCustomizeSetting payload={adminPayload} setColumns={setColumns} /> */}
-
                     </Box>
 
                     <TableSearch paginateParams={paginateParams} onSearchChange={onSearchChange} />
@@ -204,7 +130,7 @@ export const AdminList = () => {
                 </TableCell>
               </TableRow>
               <TableRow>
-                {columns.map((column) => (
+                {singerColumns.current.map((column) => (
                   <TableCell
                     key={column.id}
                     align={column.align}
@@ -225,17 +151,16 @@ export const AdminList = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {admins
-                .map((row) => {
+              {singers.map((row) => {
                   return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-                      {columns.map((column) => {
+                      {singerColumns.current.map((column) => {
                         const value = row[column.id];
                         return (
                           <TableCell key={column.id} align={column.align}>
                             {
                               column.id === 'name' ? (
-                                <label style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={() => navigateTo(row['id'])}> {value} </label>
+                                <label style={{ textDecoration: "underline", cursor: "pointer"}}> {value} </label>
                               ) : (column.format && typeof value === 'number'
                                 ? column.format(value)
                                 : value)
@@ -246,7 +171,7 @@ export const AdminList = () => {
                     </TableRow>
                   );
                 })}
-              {emptyRows(paginateParams.page, paginateParams.rowsPerPage, admins) > 0 && (
+              {emptyRows(paginateParams.page, paginateParams.rowsPerPage, singers) > 0 && (
                 <TableRow style={{ height: 53 * emptyRows }}>
                   <TableCell colSpan={6} />
                 </TableRow>
@@ -264,6 +189,25 @@ export const AdminList = () => {
         >
           <TableRow>
             <TableCell>
+              <TablePagination
+                sx={{
+                  width: '100%'
+                }}
+                rowsPerPageOptions={[5, 10, 25]}
+                colSpan={3}
+                count={total}
+                rowsPerPage={paginateParams.per_page}
+                page={paginateParams ? paginateParams.page : 0}
+                SelectProps={{
+                  inputProps: {
+                    'aria-label': 'rows per page',
+                  },
+                  native: true,
+                }}
+                onPageChange={onPageChange}
+                onRowsPerPageChange={onRowPerPageChange}
+                ActionsComponent={TablePaginationActions}
+              />
             </TableCell>
           </TableRow>
         </Box>

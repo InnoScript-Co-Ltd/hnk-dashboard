@@ -3,7 +3,7 @@ import InsertChartIcon from '@mui/icons-material/InsertChart';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import AddIcon from '@mui/icons-material/Add';
-import { Person } from "@mui/icons-material";
+import { Person, SpatialAudioOff } from "@mui/icons-material";
 
 export const items = [
     {
@@ -12,6 +12,13 @@ export const items = [
         data: 'Documents Folder',
         icon: <InsertChartIcon />,
         url: "/dashboard"
+    },
+    {
+        key: '1',
+        label: 'Singer',
+        data: 'Singer',
+        icon: <SpatialAudioOff />,
+        url: "/singer"
     },
     {
         key: '1',
