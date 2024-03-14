@@ -4,6 +4,11 @@ export const endpoints = {
     login: "auth/login",
     admin: "admin",
     singer: "singer",
+<<<<<<< HEAD
+=======
+    song: "song",
+    genre: "genres",
+>>>>>>> song/genre/singer
     user: "user",
     promotion: "promotion",
     memberOrder: "member-order",
@@ -23,13 +28,13 @@ export const endpoints = {
     region: "region",
     shop: "shop",
     count: "count",
-    role: 'role',
-    permission: 'permission',
-    exportItem : 'export-item',
-    importItem : 'import-item',
-    importCategory : 'import-category',
-    exportCategory : 'export-category',
-    exportOrder : 'export-order',
-    exportShop : 'export-shop',
-    exportUser : 'export-user'
-}
+    role: "role",
+    permission: "permission",
+    exportItem: "export-item",
+    importItem: "import-item",
+    importCategory: "import-category",
+    exportCategory: "export-category",
+    exportOrder: "export-order",
+    exportShop: "export-shop",
+    exportUser: "export-user",
+};

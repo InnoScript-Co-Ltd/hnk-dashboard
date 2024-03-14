@@ -5,11 +5,19 @@ export const singerPayload = {
     },
     store: {
         name: "",
+<<<<<<< HEAD
         profile: '',
     },
     columns: [
         { id: "profile", label: "Profile", minWidth : 150 },
         { id: "name", label: "Name", minWidth : 250 },
+=======
+        profile: "",
+    },
+    columns: [
+        { id: "profile", label: "Profile", minWidth: 150 },
+        { id: "name", label: "Name", minWidth: 250 },
+>>>>>>> song/genre/singer
     ],
     paginateParams: {
         page: 1,
@@ -19,7 +27,14 @@ export const singerPayload = {
         order: "id",
         sort: "DESC",
         value: "",
+<<<<<<< HEAD
         start_date: '',
         end_date: ''
     }
 }
+=======
+        start_date: "",
+        end_date: "",
+    },
+};
+>>>>>>> song/genre/singer
