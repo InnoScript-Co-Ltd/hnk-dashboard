@@ -4,11 +4,8 @@ export const endpoints = {
     login: "auth/login",
     admin: "admin",
     singer: "singer",
-<<<<<<< HEAD
-=======
     song: "song",
     genre: "genres",
->>>>>>> song/genre/singer
     user: "user",
     promotion: "promotion",
     memberOrder: "member-order",

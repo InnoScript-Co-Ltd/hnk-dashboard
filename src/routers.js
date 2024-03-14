@@ -7,13 +7,8 @@ import { dashbardRoutes } from "./modules/dashboard/dashboardRoute";
 import { userRoutes } from "./modules/user/userRoutes";
 import { adminRoutes } from "./modules/admin/adminRoutes";
 import { singerRoutes } from "./modules/singer/singerRoutes";
-<<<<<<< HEAD
-
-
-=======
 import { songRoutes } from "./modules/song/songRoutes";
 import { genreRoutes } from "./modules/genre/genreRoutes";
->>>>>>> song/genre/singer
 
 export const routers = createBrowserRouter([
     {
@@ -24,15 +19,10 @@ export const routers = createBrowserRouter([
             ...dashbardRoutes,
             ...userRoutes,
             ...adminRoutes,
-<<<<<<< HEAD
-            ...singerRoutes
-        ]
-=======
             ...singerRoutes,
             ...songRoutes,
             ...genreRoutes,
         ],
->>>>>>> song/genre/singer
     },
     {
         path: "auth",

@@ -1,10 +1,6 @@
 export const paths = {
     dashboard: "/dashboard",
 
-<<<<<<< HEAD
-    singer: "singer",
-    singerCreate: "singer/new",
-=======
     singer: "/singer",
     singerCreate: "/singer/new",
 
@@ -13,7 +9,6 @@ export const paths = {
  
     genre: "/genre",
     genreCreate: "/genre/new",
->>>>>>> song/genre/singer
 
     admin: "/admin",
     adminCreate: "/admin/new",
