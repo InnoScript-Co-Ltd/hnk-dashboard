@@ -1,5 +1,6 @@
 import { paths } from "../../constants/paths";
 import { SongCreate } from "./entry/SongCreate";
+
 import { SongList } from "./list/SongList";
 
 export const songRoutes = [

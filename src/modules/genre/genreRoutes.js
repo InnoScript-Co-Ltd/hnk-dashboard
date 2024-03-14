@@ -19,7 +19,7 @@ export const genreRoutes = [
         },
     },
     {
-        id: "songCreate",
+        id: "genreCreate",
         path: paths.genreCreate,
         element: <GenreCreate />,
         loader: () => {
