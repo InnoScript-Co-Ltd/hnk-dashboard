@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { FormHelperText } from '@mui/material';
 
 export const ValidationMessage = ({field}) => {
 
@@ -8,7 +9,9 @@ export const ValidationMessage = ({field}) => {
     return (
         <>
             { errors && errors[field] && (
-                <span className="error-message"> { errors[field][0] } </span>
+                <FormHelperText error id="helper-text-table-email">
+                    { errors[field][0] }
+                </FormHelperText>
             )}
         </>
     )

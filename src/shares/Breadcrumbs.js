@@ -1,7 +1,8 @@
-import { Typography } from '@mui/material';
+import { Typography, Grid } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import { Notification } from './Notification';
 
 
 export const Breadcrumb = () => {
@@ -42,6 +43,9 @@ export const Breadcrumb = () => {
                     })
                 }
             </Breadcrumbs>
+            <Grid item xs={6} sx={{position: 'absolute',top: '66px',right: '10px',zIndex: 100}}>
+              <Notification />
+            </Grid>
         </>
     )
 

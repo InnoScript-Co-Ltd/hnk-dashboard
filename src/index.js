@@ -6,23 +6,12 @@ import { Provider } from 'react-redux';
 import { stores } from './stores';
 import { RouterProvider } from 'react-router-dom';
 import { routers } from './routers';
-import { SnackbarProvider } from 'notistack';
-import { Notification } from './shares/Notification';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={stores}>
-    <SnackbarProvider 
-    anchorOrigin={{
-      vertical : 'top',
-      horizontal : 'right'
-    }} 
-    maxSnack={3}
-    autoHideDuration={1000}
-    >
-      <Notification />
-      <RouterProvider router={routers} />
-    </SnackbarProvider>
+    <RouterProvider router={routers} />
   </Provider>
 );
 
