@@ -1,11 +1,4 @@
 import { paths } from "../../constants/paths";
-<<<<<<< HEAD
-import InsertChartIcon from '@mui/icons-material/InsertChart';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import AddIcon from '@mui/icons-material/Add';
-import { Person, SpatialAudioOff } from "@mui/icons-material";
-=======
 import InsertChartIcon from "@mui/icons-material/InsertChart";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
@@ -16,7 +9,6 @@ import {
     QueueMusic,
     SpatialAudioOff,
 } from "@mui/icons-material";
->>>>>>> song/genre/singer
 
 export const items = [
     {
@@ -27,16 +19,6 @@ export const items = [
         url: "/dashboard",
     },
     {
-<<<<<<< HEAD
-        key: '1',
-        label: 'Singer',
-        data: 'Singer',
-        icon: <SpatialAudioOff />,
-        url: "/singer"
-    },
-    {
-        key: '1',
-=======
         key: "1",
         label: "Singer",
         data: "Singer",
@@ -98,7 +80,6 @@ export const items = [
     },
     {
         key: "1",
->>>>>>> song/genre/singer
         label: "User",
         icon: <Person />,
         children: [
