@@ -6,8 +6,9 @@ import { Login } from "./modules/auth/entry/Login";
 import { dashbardRoutes } from "./modules/dashboard/dashboardRoute";
 import { userRoutes } from "./modules/user/userRoutes";
 import { adminRoutes } from "./modules/admin/adminRoutes";
-
-
+import { singerRoutes } from "./modules/singer/singerRoutes";
+import { songRoutes } from "./modules/song/songRoutes";
+import { genreRoutes } from "./modules/genre/genreRoutes";
 
 export const routers = createBrowserRouter([
     {
@@ -17,8 +18,11 @@ export const routers = createBrowserRouter([
         children: [
             ...dashbardRoutes,
             ...userRoutes,
-            ...adminRoutes
-        ]
+            ...adminRoutes,
+            ...singerRoutes,
+            ...songRoutes,
+            ...genreRoutes,
+        ],
     },
     {
         path: "auth",
@@ -27,8 +31,8 @@ export const routers = createBrowserRouter([
         children: [
             {
                 path: "login",
-                element: <Login />
-            }
-        ]
-    }
-])
+                element: <Login />,
+            },
+        ],
+    },
+]);

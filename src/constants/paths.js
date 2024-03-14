@@ -1,6 +1,14 @@
 export const paths = {
-
     dashboard: "/dashboard",
+
+    singer: "/singer",
+    singerCreate: "/singer/new",
+
+    song: "/song",
+    songCreate: "/song/new",
+ 
+    genre: "/genre",
+    genreCreate: "/genre/new",
 
     admin: "/admin",
     adminCreate: "/admin/new",
@@ -26,21 +34,21 @@ export const paths = {
     discountDetail: "/discount/:id",
 
     user: "/user",
-    userCreate : "/user/new",
-    userDetail : "user/:id",
+    userCreate: "/user/new",
+    userDetail: "user/:id",
 
     category: "/category",
     createMainCategory: "/category/new",
     updateMainCategory: "/category/:id",
     subCategory: "category/:id/level/:level",
-    
+
     item: "/item",
     itemCreate: "/item/new",
     itemDetail: "item/:id",
 
     point: "/point",
-    pointCreate : "/point/new",
-    pointDetail : "/point/:id",
+    pointCreate: "/point/new",
+    pointDetail: "/point/:id",
 
     delivery: "/delivery",
     deliveryCreate: "/delivery/new",
@@ -63,12 +71,12 @@ export const paths = {
     shopCreate: "/shop/new",
     shopDetail: "/shop/:id",
 
-    role: '/role',
-    roleCreate: '/role/new',
-    roleDetail: '/role/:id',
+    role: "/role",
+    roleCreate: "/role/new",
+    roleDetail: "/role/:id",
 
-    permission: '/permission',
-    permissionDetail: '/permission/:id',
+    permission: "/permission",
+    permissionDetail: "/permission/:id",
 
     setting: "/setting",
-}
+};

@@ -3,16 +3,22 @@ import countSlice from "./shares/countSlice";
 import shareSlice from "./shares/shareSlice";
 import userSlice from "./modules/user/userSlice";
 import adminSlice from "./modules/admin/adminSlice";
-
+import singerSlice from "./modules/singer/singerSlice";
+import songSlice from "./modules/song/songSlice";
+import genreSlice from "./modules/genre/genreSlice";
 
 export const stores = configureStore({
-    reducer : {
+    reducer: {
         share: shareSlice,
-        count : countSlice,
-        user : userSlice,
-        admin : adminSlice
+        count: countSlice,
+        user: userSlice,
+        admin: adminSlice,
+        singer: singerSlice,
+        song: songSlice,
+        genre: genreSlice,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-        serializableCheck: false
-    })
-})
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false,
+        }),
+});
