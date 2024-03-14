@@ -84,7 +84,7 @@ import {
                       name="name"
                       placeholder="Enter Your Name"
                     />
-                    
+                    <ValidationMessage field={"name"} />
                   </Stack>
                 </Grid>
   
@@ -108,7 +108,7 @@ import {
                       name="email"
                       placeholder="Enter Your Email"
                     />
-                    
+                    <ValidationMessage field={"email"} />
                   </Stack>
                 </Grid>
   
@@ -132,7 +132,7 @@ import {
                       name="phone"
                       placeholder="Enter Your Phone"
                     />
-                    
+                    <ValidationMessage field={"phone"} />
                   </Stack>
                 </Grid>
                 
@@ -156,6 +156,7 @@ import {
                       name="password"
                       placeholder="Enter Your Password"
                     />
+                    <ValidationMessage field={"password"} />
                   </Stack>
                 </Grid>
   
@@ -179,6 +180,7 @@ import {
                       name="con-password"
                       placeholder="Enter Your Con Password"
                     />
+                    <ValidationMessage field={"con-password"} />
                   </Stack>
                 </Grid>
   

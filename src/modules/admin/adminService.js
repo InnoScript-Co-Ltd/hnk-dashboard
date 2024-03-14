@@ -11,10 +11,8 @@ export const adminService = {
 
         if(response.status === 200) {
             dispatch(updateNotification( {
-                show: true,
-                summary: "Success",
-                severity: "success",
-                detail: response.message
+                variant : 'success',
+                  message : response.message
             }));
         }
         return response;

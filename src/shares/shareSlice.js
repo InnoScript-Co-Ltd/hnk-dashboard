@@ -3,10 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const shareSlice = createSlice({
   name: "share",
   initialState: {
-    notification: {
-      variant : '',
-      message: ""
-    },
+    notification: [],
     errors: null,
     showSidebar: false,
     statusFilter: "ALL",
@@ -15,11 +12,17 @@ const shareSlice = createSlice({
   },
   reducers: {
     updateNotification: (state, action) => {
-      state.notification = {
-          variant : action.payload.variant,
-          message : action.payload.message
-      };
+      state.notification.push({
+        id : Date.now(),
+        variant : action.payload.variant,
+        message : action.payload.message
+    });
       return state;
+    },
+    removeNotification: (state, action) => {
+      state.notification = state.notification.filter(
+        (notification) => notification.id !== action.payload
+      );
     },
     updateError: (state, action) => {
       state.errors = { ...action.payload };
@@ -43,6 +46,7 @@ const shareSlice = createSlice({
 
 export const {
   updateNotification,
+  removeNotification,
   updateError,
   sidebarToggle,
   setStatusFilter,
