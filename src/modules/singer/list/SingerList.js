@@ -96,11 +96,6 @@ export const SingerList = () => {
   useEffect(() => {
     loadingData();
   }, [loadingData])
-<<<<<<< HEAD
-=======
-  
-  // console.log(singerService);
->>>>>>> song/genre/singer
 
   return (
     <div>
@@ -221,8 +216,4 @@ export const SingerList = () => {
 
     </div>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> song/genre/singer
