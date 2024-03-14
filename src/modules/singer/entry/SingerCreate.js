@@ -1,24 +1,17 @@
-// import { Card } from "primereact/card";
-// import { InputText } from "primereact/inputtext";
-// import { Password } from "primereact/password";
 import {
-    Button,
-    FormHelperText,
     Grid,
     InputLabel,
     OutlinedInput,
     Stack,
-    Paper,
-    TextField,
+    Paper
 } from "@mui/material";
 import { paths } from "../../../constants/paths";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { singerService } from "../singerService";
 import { ValidationMessage } from "../../../shares/ValidationMessage";
 import { payloadHandler } from "../../../helpers/handler";
-import { tooltipOptions } from "../../../constants/config";
 import { Breadcrumb } from "../../../shares/Breadcrumbs";
 import { singerPayload } from "../singerPayload";
 import { Profile } from "../../../shares/Profile";
@@ -29,7 +22,6 @@ export const SingerCreate = () => {
     const [loading, setLoading] = useState(false);
     const [payload, setPayload] = useState(singerPayload.store);
 
-    // const { translate } = useSelector(state => state.setting);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -74,7 +66,6 @@ export const SingerCreate = () => {
                                 <OutlinedInput
                                     id="table-name"
                                     type="text"
-                                    // value={formValues.name}
                                     onChange={(e) =>
                                         payloadHandler(
                                             payload,
@@ -88,6 +79,7 @@ export const SingerCreate = () => {
                                     name="name"
                                     placeholder="Enter Your Name"
                                 />
+                                <ValidationMessage field={"name"} />
                             </Stack>
                         </Grid>
 

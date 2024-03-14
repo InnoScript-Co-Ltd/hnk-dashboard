@@ -1,13 +1,9 @@
-// import { Card } from "primereact/card";
-// import { InputText } from "primereact/inputtext";
-// import { Password } from "primereact/password";
 import {
     Grid,
     InputLabel,
     OutlinedInput,
     Stack,
-    Paper,
-
+    Paper
 } from "@mui/material";
 import { paths } from "../../../constants/paths";
 import { useState } from "react";
@@ -15,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { genreService } from "../genreService";
 import { payloadHandler } from "../../../helpers/handler";
+import { ValidationMessage } from "../../../shares/ValidationMessage";
 import { Breadcrumb } from "../../../shares/Breadcrumbs";
 import { genrePayload } from "../genrePayload";
 import { formBuilder } from "../../../helpers/formBuilder";
@@ -23,8 +20,6 @@ import FormMainAction from "../../../shares/FormMainAction";
 export const GenreCreate = () => {
     const [loading, setLoading] = useState(false);
     const [payload, setPayload] = useState(genrePayload.store);
-
-    // const { translate } = useSelector(state => state.setting);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -57,7 +52,6 @@ export const GenreCreate = () => {
                                 <OutlinedInput
                                     id="table-name"
                                     type="text"
-                                    // value={formValues.name}
                                     onChange={(e) =>
                                         payloadHandler(
                                             payload,
@@ -71,6 +65,7 @@ export const GenreCreate = () => {
                                     name="name"
                                     placeholder="Enter Your Name"
                                 />
+                                <ValidationMessage field={"name"} />
                             </Stack>
                         </Grid>
 

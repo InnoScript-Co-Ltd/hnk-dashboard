@@ -1,6 +1,3 @@
-// import { Card } from "primereact/card";
-// import { InputText } from "primereact/inputtext";
-// import { Password } from "primereact/password";
 import {
   Button,
   FormHelperText,
@@ -28,8 +25,6 @@ import FormMainAction from "../../../shares/FormMainAction";
 export const UserCreate = () => {
   const [loading, setLoading] = useState(false);
   const [payload, setPayload] = useState(userPayload.store);
-
-  // const { translate } = useSelector(state => state.setting);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -70,7 +65,6 @@ export const UserCreate = () => {
                   <OutlinedInput
                     id="table-name"
                     type="text"
-                    // value={formValues.name}
                     onChange={(e) =>
                       payloadHandler(
                         payload,
@@ -94,7 +88,6 @@ export const UserCreate = () => {
                   <OutlinedInput
                     id="email"
                     type="email"
-                    // value={formValues.email}
                     onChange={(e) =>
                       payloadHandler(
                         payload,
@@ -118,7 +111,6 @@ export const UserCreate = () => {
                   <OutlinedInput
                     id="phone"
                     type="text"
-                    // value={formValues.phone}
                     onChange={(e) =>
                       payloadHandler(
                         payload,
@@ -142,7 +134,6 @@ export const UserCreate = () => {
                   <OutlinedInput
                     id="password"
                     type="password"
-                    // value={formValues.password}
                     onChange={(e) =>
                       payloadHandler(
                         payload,
@@ -166,7 +157,6 @@ export const UserCreate = () => {
                   <OutlinedInput
                     id="con-password"
                     type="password"
-                    // value={formValues.password}
                     onChange={(e) =>
                       payloadHandler(
                         payload,

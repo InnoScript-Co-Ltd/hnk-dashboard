@@ -1,6 +1,3 @@
-// import { Card } from "primereact/card";
-// import { InputText } from "primereact/inputtext";
-// import { Password } from "primereact/password";
 import { Grid, InputLabel, OutlinedInput, Stack, Paper } from "@mui/material";
 import { paths } from "../../../constants/paths";
 import { useState } from "react";
@@ -16,8 +13,6 @@ import FormMainAction from "../../../shares/FormMainAction";
 export const SongCreate = () => {
     const [loading, setLoading] = useState(false);
     const [payload, setPayload] = useState(songPayload.store);
-
-    // const { translate } = useSelector(state => state.setting);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -48,7 +43,6 @@ export const SongCreate = () => {
                                 <OutlinedInput
                                     id="table-name"
                                     type="text"
-                                    // value={formValues.name}
                                     onChange={(e) =>
                                         payloadHandler(
                                             payload,

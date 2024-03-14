@@ -20,7 +20,7 @@ export const Notification = () => {
             notification.map((noti)=>{
                 dispatch(removeNotification(noti.id));
             })
-        }, 5000);
+        }, 1000);
     },[notification])
 
   return (

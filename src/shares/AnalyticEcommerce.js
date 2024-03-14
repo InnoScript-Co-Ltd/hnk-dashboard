@@ -1,16 +1,9 @@
 import PropTypes from 'prop-types';
-
-// material-ui
 import { Card, Box, Chip, Grid, Stack, Typography } from '@mui/material';
 
-// project import
-// import MainCard from 'components/MainCard';
-
-// assets
 
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 
-// ==============================|| STATISTICS - ECOMMERCE CARD  ||============================== //
 
 const AnalyticEcommerce = ({ color, title, count, percentage, isLoss, extra }) => (
   <Card

@@ -1,15 +1,9 @@
-// import { Card } from "primereact/card";
-// import { InputText } from "primereact/inputtext";
-// import { Password } from "primereact/password";
 import {
-    Button,
-    FormHelperText,
     Grid,
     InputLabel,
     OutlinedInput,
     Stack,
     Paper,
-    TextField
   } from '@mui/material';
   import { paths } from "../../../constants/paths";
   import { useState } from "react";
@@ -18,7 +12,6 @@ import {
   import { adminService } from "../adminService";
   import { ValidationMessage } from "../../../shares/ValidationMessage";
   import { payloadHandler } from "../../../helpers/handler";
-  import { tooltipOptions } from "../../../constants/config";
   import { Breadcrumb } from '../../../shares/Breadcrumbs'
   import { adminPayload } from "../adminPayload";
   import { Profile } from "../../../shares/Profile";
@@ -28,8 +21,6 @@ import {
   export const AdminCreate = () => {
     const [loading, setLoading] = useState(false);
     const [payload, setPayload] = useState(adminPayload.store);
-  
-    // const { translate } = useSelector(state => state.setting);
   
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -70,7 +61,6 @@ import {
                     <OutlinedInput
                       id="table-name"
                       type="text"
-                      // value={formValues.name}
                       onChange={(e) =>
                         payloadHandler(
                           payload,
@@ -94,7 +84,6 @@ import {
                     <OutlinedInput
                       id="email"
                       type="email"
-                      // value={formValues.email}
                       onChange={(e) =>
                         payloadHandler(
                           payload,
@@ -118,7 +107,6 @@ import {
                     <OutlinedInput
                       id="phone"
                       type="text"
-                      // value={formValues.phone}
                       onChange={(e) =>
                         payloadHandler(
                           payload,
@@ -142,7 +130,6 @@ import {
                     <OutlinedInput
                       id="password"
                       type="password"
-                      // value={formValues.password}
                       onChange={(e) =>
                         payloadHandler(
                           payload,
@@ -166,7 +153,6 @@ import {
                     <OutlinedInput
                       id="con-password"
                       type="password"
-                      // value={formValues.password}
                       onChange={(e) =>
                         payloadHandler(
                           payload,
