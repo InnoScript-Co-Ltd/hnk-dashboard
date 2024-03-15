@@ -1,10 +1,4 @@
-import {
-    Grid,
-    InputLabel,
-    OutlinedInput,
-    Stack,
-    Paper
-} from "@mui/material";
+import { Grid, InputLabel, OutlinedInput, Stack, Paper } from "@mui/material";
 import { paths } from "../../../constants/paths";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -33,8 +27,19 @@ export const GenreCreate = () => {
         setLoading(false);
     };
 
-
-
+    const handleRateChange = (e) => {
+        const inputValue = e.target.value;
+        // Check if the input value exceeds the maximum limit (10)
+        if (inputValue <= 10) {
+            payloadHandler({ ...payload, rate: inputValue });
+        } else {
+            // If the input value exceeds the limit, you can handle it accordingly
+            // For example, you can prevent further action, show a message, etc.
+            console.log("Maximum limit exceeded: 10");
+            // Optionally, you can reset the input to the maximum value
+            // payloadHandler({ ...payload, rate: '10' });
+        }
+    };
     return (
         <>
             <div className=" grid">
@@ -69,7 +74,30 @@ export const GenreCreate = () => {
                             </Stack>
                         </Grid>
 
-              
+                        <Grid item xs={12} md={4}>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="table-name">
+                                    Rate (required)
+                                </InputLabel>
+                                <OutlinedInput
+                                    id="table-name"
+                                    type="number"
+                                    onChange={(e) =>
+                                        payloadHandler(
+                                            payload,
+                                            e.target.value,
+                                            "rate",
+                                            (updateValue) => {
+                                                setPayload(updateValue);
+                                            }
+                                        )
+                                    }
+                                    name="rate"
+                                    placeholder="Enter Rate"
+                                />
+                                <ValidationMessage field={"rate"} />
+                            </Stack>
+                        </Grid>
 
                         <FormMainAction
                             cancel="Cancle"
