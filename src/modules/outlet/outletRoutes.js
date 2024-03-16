@@ -19,14 +19,14 @@ export const outletRoutes = [
         },
     },
     {
-        id: "genreCreate",
-        path: paths.genreCreate,
+        id: "outletCreate",
+        path: paths.outletCreate,
         element: <OutletCreate />,
         loader: () => {
             return {
                 breadcrumbs: [
                     { label: "Dashboard", url: paths.dashboard },
-                    { label: "Outlet", url: paths.genre },
+                    { label: "Outlet", url: paths.outlet },
                     { label: null, url: null, current: "Create" },
                 ],
                 role: ["ADMINISTRATOR"],

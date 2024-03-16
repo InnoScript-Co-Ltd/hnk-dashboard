@@ -10,6 +10,7 @@ import { Breadcrumb } from "../../../shares/Breadcrumbs";
 import { outletPayload } from "../outletPayload";
 import { formBuilder } from "../../../helpers/formBuilder";
 import FormMainAction from "../../../shares/FormMainAction";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 export const OutletCreate = () => {
     const [loading, setLoading] = useState(false);
@@ -64,7 +65,7 @@ export const OutletCreate = () => {
                         <Grid item xs={12} md={4}>
                             <Stack spacing={1}>
                                 <InputLabel htmlFor="table-name">
-                                    Rate (required)
+                                    Phone (required)
                                 </InputLabel>
                                 <OutlinedInput
                                     id="table-name"
@@ -73,7 +74,58 @@ export const OutletCreate = () => {
                                         payloadHandler(
                                             payload,
                                             e.target.value,
-                                            "rate",
+                                            "phone",
+                                            (updateValue) => {
+                                                setPayload(updateValue);
+                                            }
+                                        )
+                                    }
+                                    name="phone"
+                                    placeholder="Enter Phone Number"
+                                />
+                                <ValidationMessage field={"rate"} />
+                            </Stack>
+                        </Grid>
+
+                        <Grid item xs={12} md={4}>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="table-name">
+                                    Address (required)
+                                </InputLabel>
+
+                                <OutlinedInput
+                                    id="table-name"
+                                    type="text"
+                                    onChange={(e) =>
+                                        payloadHandler(
+                                            payload,
+                                            e.target.value,
+                                            "address",
+                                            (updateValue) => {
+                                                setPayload(updateValue);
+                                            }
+                                        )
+                                    }
+                                    name="address"
+                                    placeholder="Enter Address"
+                                />
+                                <ValidationMessage field={"address"} />
+                            </Stack>
+                        </Grid>
+                        <Grid item xs={12} md={4}>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="table-name">
+                                    Date (required)
+                                </InputLabel>
+
+                                <OutlinedInput
+                                    id="table-name"
+                                    type="date"
+                                    onChange={(e) =>
+                                        payloadHandler(
+                                            payload,
+                                            e.target.value,
+                                            "date",
                                             (updateValue) => {
                                                 setPayload(updateValue);
                                             }
@@ -82,7 +134,110 @@ export const OutletCreate = () => {
                                     name="rate"
                                     placeholder="Enter Rate"
                                 />
-                                <ValidationMessage field={"rate"} />
+                                <ValidationMessage field={"date"} />
+                            </Stack>
+                        </Grid>
+                        <Grid item xs={12} md={4}>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="table-name">
+                                    Time (required)
+                                </InputLabel>
+
+                                <OutlinedInput
+                                    id="table-name"
+                                    type="time"
+                                    onChange={(e) =>
+                                        payloadHandler(
+                                            payload,
+                                            e.target.value,
+                                            "time",
+                                            (updateValue) => {
+                                                setPayload(updateValue);
+                                            }
+                                        )
+                                    }
+                                    name="time"
+                                    placeholder="Enter Time"
+                                />
+                                <ValidationMessage field={"time"} />
+                            </Stack>
+                        </Grid>
+
+                        <Grid item xs={12} md={4}>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="table-name">
+                                Promotion (required)
+                                </InputLabel>
+
+                                <OutlinedInput
+                                    id="table-name"
+                                    type="text"
+                                    onChange={(e) =>
+                                        payloadHandler(
+                                            payload,
+                                            e.target.value,
+                                            "promotion",
+                                            (updateValue) => {
+                                                setPayload(updateValue);
+                                            }
+                                        )
+                                    }
+                                    name="promotion"
+                                    placeholder="Enter Promotion"
+                                />
+                                <ValidationMessage field={"promotion"} />
+                            </Stack>
+                        </Grid>
+
+                        <Grid item xs={12} md={4}>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="table-name">
+                                Promo Description
+                                </InputLabel>
+
+                                <OutlinedInput
+                                    id="table-name"
+                                    type="text"
+                                    onChange={(e) =>
+                                        payloadHandler(
+                                            payload,
+                                            e.target.value,
+                                            "promo_description",
+                                            (updateValue) => {
+                                                setPayload(updateValue);
+                                            }
+                                        )
+                                    }
+                                    name="promo_description"
+                                    placeholder="Enter Description"
+                                />
+                                <ValidationMessage field={"promo_description"} />
+                            </Stack>
+                        </Grid>
+
+                        <Grid item xs={12} md={4}>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="table-name">
+                                Latitude (required)
+                                </InputLabel>
+
+                                <OutlinedInput
+                                    id="table-name"
+                                    type="text"
+                                    onChange={(e) =>
+                                        payloadHandler(
+                                            payload,
+                                            e.target.value,
+                                            "latitude",
+                                            (updateValue) => {
+                                                setPayload(updateValue);
+                                            }
+                                        )
+                                    }
+                                    name="latitude"
+                                    placeholder="Enter Latitude"
+                                />
+                                <ValidationMessage field={"latitude"} />
                             </Stack>
                         </Grid>
 

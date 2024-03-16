@@ -8,6 +8,7 @@ import {
     Person,
     QueueMusic,
     SpatialAudioOff,
+    Storefront,
 } from "@mui/icons-material";
 
 export const items = [
@@ -75,6 +76,26 @@ export const items = [
                 label: "menu_create",
                 icon: <AddIcon />,
                 url: paths.genreCreate,
+            },
+        ],
+    },
+    {
+        key: "1",
+        label: "Outlet",
+        data: "Outlet",
+        icon: <Storefront />,
+        children: [
+            {
+                key: "1-1",
+                label: "menu_list",
+                icon: <FormatListBulletedIcon />,
+                url: paths.outlet,
+            },
+            {
+                key: "1-2",
+                label: "menu_create",
+                icon: <AddIcon />,
+                url: paths.outletCreate,
             },
         ],
     },
