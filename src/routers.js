@@ -9,6 +9,7 @@ import { adminRoutes } from "./modules/admin/adminRoutes";
 import { singerRoutes } from "./modules/singer/singerRoutes";
 import { songRoutes } from "./modules/song/songRoutes";
 import { genreRoutes } from "./modules/genre/genreRoutes";
+import { outletRoutes } from "./modules/outlet/outletRoutes";
 
 export const routers = createBrowserRouter([
     {
@@ -22,6 +23,7 @@ export const routers = createBrowserRouter([
             ...singerRoutes,
             ...songRoutes,
             ...genreRoutes,
+            ...outletRoutes,
         ],
     },
     {

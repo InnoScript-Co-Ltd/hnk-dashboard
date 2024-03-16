@@ -6,6 +6,7 @@ export const endpoints = {
     singer: "singer",
     song: "song",
     genre: "genres",
+    outlet: "outlet",
     user: "user",
     promotion: "promotion",
     memberOrder: "member-order",

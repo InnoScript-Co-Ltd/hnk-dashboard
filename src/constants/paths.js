@@ -9,6 +9,9 @@ export const paths = {
  
     genre: "/genre",
     genreCreate: "/genre/new",
+   
+    outlet: "/outlet",
+    outletCreate: "/outlet/new",
 
     admin: "/admin",
     adminCreate: "/admin/new",

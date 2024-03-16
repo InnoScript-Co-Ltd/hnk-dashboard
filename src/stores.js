@@ -6,6 +6,7 @@ import adminSlice from "./modules/admin/adminSlice";
 import singerSlice from "./modules/singer/singerSlice";
 import songSlice from "./modules/song/songSlice";
 import genreSlice from "./modules/genre/genreSlice";
+import outletSlice from "./modules/outlet/outletSlice";
 
 export const stores = configureStore({
     reducer: {
@@ -16,6 +17,7 @@ export const stores = configureStore({
         singer: singerSlice,
         song: songSlice,
         genre: genreSlice,
+        outlet: outletSlice,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
