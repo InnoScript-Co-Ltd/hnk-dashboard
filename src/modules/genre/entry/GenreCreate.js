@@ -27,19 +27,6 @@ export const GenreCreate = () => {
         setLoading(false);
     };
 
-    const handleRateChange = (e) => {
-        const inputValue = e.target.value;
-        // Check if the input value exceeds the maximum limit (10)
-        if (inputValue <= 10) {
-            payloadHandler({ ...payload, rate: inputValue });
-        } else {
-            // If the input value exceeds the limit, you can handle it accordingly
-            // For example, you can prevent further action, show a message, etc.
-            console.log("Maximum limit exceeded: 10");
-            // Optionally, you can reset the input to the maximum value
-            // payloadHandler({ ...payload, rate: '10' });
-        }
-    };
     return (
         <>
             <div className=" grid">
